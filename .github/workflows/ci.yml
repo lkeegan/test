@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: cpu
-      run: cat /proc/cpuinfo
+      run: sysctl -n machdep.cpu.brand_string
       
     - name: make build directory
       run: cmake -E make_directory ${{runner.workspace}}/build
