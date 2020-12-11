@@ -17,6 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: cpu
+      run: cat /proc/cpuinfo
+      
     - name: make build directory
       run: cmake -E make_directory ${{runner.workspace}}/build
 
